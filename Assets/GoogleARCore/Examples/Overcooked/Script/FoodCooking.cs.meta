@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 565c82579973f4cd2a56a39f09d57148
+timeCreated: 1528899032
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cookedSteak: {fileID: 1433422679372138, guid: fab03ab7228484fdba4078a6509ea704,
+      type: 2}
+  - uncookedSteak: {fileID: 1249352958172906, guid: fab03ab7228484fdba4078a6509ea704,
+      type: 2}
+  - pan: {fileID: 1367562465062222, guid: fab03ab7228484fdba4078a6509ea704, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

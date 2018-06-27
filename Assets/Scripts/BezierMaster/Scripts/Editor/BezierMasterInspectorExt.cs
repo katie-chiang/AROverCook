@@ -43,6 +43,17 @@ namespace BezierMaster
             count = master.ObjectsCount;
         }
 
+
+        //void Update(){
+        //    Debug.Log("here");
+        //    if(master.showObjectsOptions){
+        //        MeshInstatiating();
+        //    }if (master.usingOfSpline != Using.None){
+        //        Debug.Log("updating");
+        //        master.UpdateMaster(true);
+        //    }
+        //}
+
         public override void OnInspectorGUI()
         {
             GUILayout.Space(10);
@@ -389,8 +400,8 @@ namespace BezierMaster
             }
 
             GUILayout.Space(5);
-            //GUILayout.Space(5);
-            /*
+            GUILayout.Space(5);
+
             master.showObjRandomisationOptions = EditorGUILayout.Foldout(master.showObjRandomisationOptions, "Randomise");
             master.randomise = master.showObjRandomisationOptions;
             if (master.showObjRandomisationOptions)
@@ -439,7 +450,7 @@ namespace BezierMaster
                 EditorGUI.indentLevel -= 1;
             }
             GUILayout.Space(5);
-            */
+
             GUILayout.EndVertical();
 
             GUILayout.BeginVertical("box");

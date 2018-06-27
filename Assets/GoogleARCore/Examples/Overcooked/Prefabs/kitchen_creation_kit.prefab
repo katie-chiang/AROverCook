@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 114639957618887472}
   - component: {fileID: 114946022899352970}
   - component: {fileID: 114882470858315578}
+  - component: {fileID: 114446520135696970}
   m_Layer: 0
   m_Name: kitchen_creation_kit
   m_TagString: Untagged
@@ -1479,6 +1480,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 0.6
   smooth: 10
+--- !u!114 &114446520135696970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733896847035668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f484331e1d5443979f240fa65df4f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curvePrefab: {fileID: 1601409784018906, guid: 5706c1076dc5f4be191f4e96fdf009ef,
+    type: 2}
 --- !u!114 &114530129682212662
 MonoBehaviour:
   m_ObjectHideFlags: 1

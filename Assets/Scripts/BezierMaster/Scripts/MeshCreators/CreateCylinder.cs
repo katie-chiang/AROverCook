@@ -140,6 +140,10 @@ namespace BezierMaster.MeshesCreating
 
                     index++;
                 }
+
+                for (int k = 0; k < vertices.Length; k++){
+                    Debug.Log("verticies: " + vertices[k]);
+                }
             }
 
             //generating caps

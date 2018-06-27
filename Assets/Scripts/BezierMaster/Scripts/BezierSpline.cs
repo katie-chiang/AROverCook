@@ -365,48 +365,20 @@ namespace BezierMaster
                 EnforceMode(0);
             }
         }
-        /*public void AddCurve(Vector3 position)
-        {
-            
-            
-            Vector3 point = points[points.Length - 1];
-            Array.Resize(ref points, points.Length + 3);
-            point.x += 20f;
-            points[points.Length - 3] = point;
-            point.x += 20f;
-            point.z += 20f;
-            points[points.Length - 2] = point;
-            point.x += 20f;
-            points[points.Length - 1] = point;
 
-            Array.Resize(ref modes, modes.Length + 1);
-            modes[modes.Length - 1] = modes[modes.Length - 2];
-            EnforceMode(points.Length - 4);
-
-            Array.Resize(ref zRotationAtPoint, modes.Length);
-            Array.Resize(ref scaleFactor3d, modes.Length);
-            scaleFactor3d[scaleFactor3d.Length - 1] = Vector3.one;
-
-            if (loop)
-            {
-                points[points.Length - 1] = points[0];
-                modes[modes.Length - 1] = modes[0];
-                zRotationAtPoint[zRotationAtPoint.Length - 1] = zRotationAtPoint[0];
-                scaleFactor3d[scaleFactor3d.Length - 1] = scaleFactor3d[0];
-                EnforceMode(0);
-            }
-        }*/
         public void AddCurve(Vector3 touchPosition)
         {
             //Debug.Log("add curve" + touchPosition);
 
-            Vector3 point = points[points.Length - 1];
+            //Vector3 point = points[points.Length - 1];
+            Vector3 point = touchPosition;
+
             Array.Resize(ref points, points.Length + 3);
 
             //point.x = point.x + 0.5f;
             points[points.Length - 3] = point;
 
-            point = touchPosition;
+            //point = touchPosition;
             points[points.Length - 2] = point;
            // point.x = touchPosition.x + 0.5f;
 

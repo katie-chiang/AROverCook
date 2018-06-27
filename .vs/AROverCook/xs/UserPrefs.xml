@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{F343F04E-5B98-E964-4087-6EF8A3F95A7E}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BezierMaster/Scripts/BezierSpline.cs">
+    <Files>
+      <File FileName="Assets/Scripts/BezierMaster/Scripts/MeshCreators/CreateMeshBase.cs" Line="60" Column="41" />
+      <File FileName="Assets/Scripts/BezierMaster/Scripts/BezierMaster.cs" Line="533" Column="10" />
+      <File FileName="Assets/Scripts/BezierMaster/Scripts/Editor/BezierMasterInspectorExt.cs" Line="156" Column="41" />
+      <File FileName="Assets/Scripts/BezierMaster/Scripts/MeshCreators/CreateCylinder.cs" Line="31" Column="13" />
+      <File FileName="Assets/Scripts/BezierMaster/Scripts/BezierSpline.cs" Line="407" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

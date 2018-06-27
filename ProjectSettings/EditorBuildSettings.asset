@@ -8,9 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GoogleARCore/Examples/CloudAnchor/Scenes/TableTennis.unity
     guid: bc1127f94eac94a8babf197f935750d9
-  - enabled: 1
-    path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
+  - enabled: 0
+    path: Assets/GoogleARCore/Examples/Overcooked/Scenes/OverCook.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
   - enabled: 0
     path: Assets/GoogleARCore/Examples/CloudAnchor/Scenes/CloudAnchor.unity
     guid: 83fb41cc294e74bdea57537befa00ffc
+  - enabled: 1
+    path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
+    guid: e3e9502e93649401fa5a236b9bc6c2d7
+  m_configObjects: {}

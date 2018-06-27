@@ -20,6 +20,8 @@ TagManager:
   - taco
   - CookedShrimp
   - Shrimp
+  - Absinthe
+  - icecream
   layers:
   - Default
   - TransparentFX

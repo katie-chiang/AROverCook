@@ -50,7 +50,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// A model to place when a raycast from a user touch hits a plane.
         /// </summary>
         public GameObject AndyAndroidPrefab;
-
+        public GameObject curvePrefab;
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
         /// </summary>
@@ -82,6 +82,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         private ARKitHelper m_ARKit = new ARKitHelper();
         private bool alreadyDetect = false;
+        bool curveDetected = false;
 
         /// <summary>
         /// The Unity Update() method.
@@ -101,7 +102,7 @@ namespace GoogleARCore.Examples.HelloAR
                     break;
                 }
             }*/
-            if (alreadyDetect == true){
+            if (curveDetected){
                 return;
             }
             //SearchingForPlaneUI.SetActive(showSearchingUI);
@@ -141,6 +142,7 @@ namespace GoogleARCore.Examples.HelloAR
             if (m_LastPlacedAnchor != null)
             {
                 // Instantiate Andy model at the hit pose.
+                if (!alreadyDetect) { 
                 var andyObject = Instantiate(AndyAndroidPrefab, m_LastPlacedAnchor.transform.position,
                     m_LastPlacedAnchor.transform.rotation);
 
@@ -149,8 +151,21 @@ namespace GoogleARCore.Examples.HelloAR
 
                 // Make Andy model a child of the anchor.
                 andyObject.transform.parent = m_LastPlacedAnchor.transform;
-                
+
                 alreadyDetect = true;
+                }else{
+                    //instantiate curve with an anchor attached
+                    var curveObject = Instantiate(curvePrefab, m_LastPlacedAnchor.transform.position,
+                     m_LastPlacedAnchor.transform.rotation);
+
+                    // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
+                    curveObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+
+                    // Make Andy model a child of the anchor.
+                    curveObject.transform.parent = m_LastPlacedAnchor.transform;
+
+                    curveDetected = true;
+                }
             }
 
             

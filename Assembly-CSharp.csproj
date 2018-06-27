@@ -61,10 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bezier.cs" />
-    <Compile Include="Assets\BezierControlPointMode.cs" />
-    <Compile Include="Assets\BezierCurve.cs" />
-    <Compile Include="Assets\BezierSpline.cs" />
     <Compile Include="Assets\Futuristic Bar Metal Drinks Pack Mobile Friendly (FREE)\DisplayFrameWork\Scripts\AspectRatioScreen.cs" />
     <Compile Include="Assets\Futuristic Bar Metal Drinks Pack Mobile Friendly (FREE)\DisplayFrameWork\Scripts\DisplayObjects.cs" />
     <Compile Include="Assets\Futuristic Bar Metal Drinks Pack Mobile Friendly (FREE)\DisplayFrameWork\Scripts\ItemInfo.cs" />
@@ -96,6 +92,7 @@
     <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\FoodManager.cs" />
     <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\FoodTracking.cs" />
     <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\GameManager.cs" />
+    <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\iceCreamScript.cs" />
     <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\MoveScript.cs" />
     <Compile Include="Assets\GoogleARCore\Examples\Overcooked\Script\TacoScript.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\InstantPreview\Scripts\InstantPreviewInput.cs" />
@@ -206,8 +203,6 @@
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSession.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPSessionStatus.cs" />
     <Compile Include="Assets\GoogleARCore\SDK\Scripts\XPTrackingState.cs" />
-    <Compile Include="Assets\Line.cs" />
-    <Compile Include="Assets\PlayerSetup.cs" />
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\BezierBase.cs" />
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\BezierMaster.cs" />
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\BezierSpline.cs" />
@@ -216,9 +211,6 @@
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\MeshCreators\CreateMeshBase.cs" />
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\MeshCreators\CreateTube.cs" />
     <Compile Include="Assets\Scripts\BezierMaster\Scripts\MovePointExample.cs" />
-    <Compile Include="Assets\SplineDecorator.cs" />
-    <Compile Include="Assets\SplineWalker.cs" />
-    <Compile Include="Assets\SplineWalkerMode.cs" />
     <Compile Include="Assets\TouchScript\Examples\_misc\Scripts\Checker.cs" />
     <Compile Include="Assets\TouchScript\Examples\_misc\Scripts\ExamplesList.cs" />
     <Compile Include="Assets\TouchScript\Examples\_misc\Scripts\Highlight.cs" />

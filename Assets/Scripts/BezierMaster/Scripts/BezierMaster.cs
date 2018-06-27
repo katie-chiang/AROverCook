@@ -151,18 +151,30 @@ namespace BezierMaster
         private int countTouch = 0;
 
         int mousecount = 0;
-
+        Vector3 prevPosition = Vector3.zero;
+        Vector3 touchPoint = Vector3.zero;
         private bool firstTime = true;
-        void Update(){
+        public bool stop = false;
+
+        void Update()
+        {
+
+            //Debug.Log("bool: " + stop);
+
+            //if(stop){
+            //    return;
+            //}
 
             if (Input.touchCount < 1)
-            return;
+                return;
 
             countTouch += 1;
             if (countTouch % 3 != 0)
-            return;
+                return;
+
 
             Touch touch = Input.GetTouch(0);
+
 
             Ray raycast = Camera.main.ScreenPointToRay(touch.position);
 
@@ -171,32 +183,49 @@ namespace BezierMaster
             //    return;
             //}
 
-            //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
-           
+            prevPosition = touchPoint;
+            touchPoint = raycast.GetPoint(3);
 
-            //RaycastHit raycastHit;
-            //if (Physics.Raycast(raycast, out raycastHit)){
+            //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
+            //{
+            //add a condition to only add point if move over a certain distance
+            if (Vector3.Distance(prevPosition, touchPoint) > 0.05f)
+            {
+
+                //RaycastHit raycastHit;
+                //if (Physics.Raycast(raycast, out raycastHit)){
                 if (spline2 == null)
                     spline2 = spline;
-                if (firstTime == true){
-                    spline2.Reset(raycast.GetPoint(3));
+                if (firstTime == true)
+                {
+                    spline2.Reset(touchPoint);
+                    //spline2.Reset(raycastHit.point);
+                    //var meshCreator = new CreateCylinder(spline);
                     firstTime = false;
                 }
 
                 //commented this out
                 //EditorGUI.BeginChangeCheck();
 
-               // Debug.Log("raycast");
-                Undo.RecordObject(spline2, "Add Curve");
+                // Debug.Log("raycast");
+
+                //comment
+                //Undo.RecordObject(spline2, "Add Curve");
+
                 //Debug.Log("ray" + raycastHit.point);
 
-
-                spline2.AddCurve(raycast.GetPoint(3));
+                //spline2.AddCurve(raycastHit.point);
+                spline2.AddCurve(touchPoint);
+                CreateCylinderMesh();
+                UpdateMesh();
 
                 //commented this out
                 //spline2.AddCurve(raycastHit.point);
 
-                EditorUtility.SetDirty(spline2);
+                //comment
+                //EditorUtility.SetDirty(spline2);
+
                 //EditorGUI.EndChangeCheck();
 
                 //commeneted this out
@@ -207,10 +236,14 @@ namespace BezierMaster
                 //    //spline2.Loop = loop;
                 //}
 
-
+                //}else{
+                //    stop = true;
+                //}
+            }
 
             //}    
         }
+
 
         public void Reset()
         {
@@ -371,7 +404,7 @@ namespace BezierMaster
         void UpdateMesh()
         {
             if (meshGO == null)
-            {   
+            {
                 //create empty game object
                 meshGO = new GameObject("Mesh");
                 meshGO.transform.position = transform.position;
@@ -494,6 +527,31 @@ namespace BezierMaster
             }
 
             return path;
+        }
+
+        private void CreateCylinderMesh()
+        {
+            //Clear(true);
+            meshCreator = new CreateCylinder(spline2);
+            //meshType = MeshType.Cylinder;
+            //usingOfSpline = Using.Mesh;
+            //radius1 = 0.1f;
+
+            //LenghtSegmentsCount = 200;
+
+            //WidthSegmentsCount = 8;
+
+            //capStart = true;
+            //capEnd = true;
+
+            //textureOrientation = false;
+
+            //meshCreator.LenghtSegmentsCount = LenghtSegmentsCount;
+            //meshCreator.WidthSegmentsCount = WidthSegmentsCount;
+            //meshCreator.radius1 = radius1;
+            //meshCreator.textureOrientation = textureOrientation;
+
+
         }
     }
 }

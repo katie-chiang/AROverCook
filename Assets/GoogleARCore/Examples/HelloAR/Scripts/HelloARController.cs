@@ -102,7 +102,9 @@ namespace GoogleARCore.Examples.HelloAR
                     break;
                 }
             }*/
-            if (curveDetected){
+
+            //change this line for instantiating other things
+            if (alreadyDetect){
                 return;
             }
             //SearchingForPlaneUI.SetActive(showSearchingUI);

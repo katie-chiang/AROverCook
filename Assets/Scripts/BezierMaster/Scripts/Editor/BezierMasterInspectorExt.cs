@@ -44,15 +44,6 @@ namespace BezierMaster
         }
 
 
-        //void Update(){
-        //    Debug.Log("here");
-        //    if(master.showObjectsOptions){
-        //        MeshInstatiating();
-        //    }if (master.usingOfSpline != Using.None){
-        //        Debug.Log("updating");
-        //        master.UpdateMaster(true);
-        //    }
-        //}
 
         public override void OnInspectorGUI()
         {

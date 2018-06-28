@@ -10,7 +10,7 @@ namespace BezierMaster.MeshesCreating
 
         protected BezierSpline spline;
 
-        protected int lenghtSegmentsCount = 20;
+        protected int lenghtSegmentsCount = 299;
         public int LenghtSegmentsCount
         {
             get
@@ -24,7 +24,7 @@ namespace BezierMaster.MeshesCreating
             }
         }
 
-        protected int widhtSegmentsCount = 6;
+        protected int widhtSegmentsCount = 5;
         public int WidthSegmentsCount
         {
             get
@@ -38,7 +38,7 @@ namespace BezierMaster.MeshesCreating
             }
         }
 
-        public float radius1 = 5;
+        public float radius1 = 0.04f;
 
         protected Vector3[] vertices = new Vector3[0];
         protected Vector3[] normals = new Vector3[0];

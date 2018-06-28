@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f484331e1d5443979f240fa65df4f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curvePrefab: {fileID: 1601409784018906, guid: 5706c1076dc5f4be191f4e96fdf009ef,
+  curvePrefab: {fileID: 1235022151989802, guid: c81d8da6a0e774f37bd4f808f7541e50,
     type: 2}
 --- !u!114 &114530129682212662
 MonoBehaviour:

@@ -63,10 +63,7 @@ namespace BezierMaster
         public void Reset()
         {
             points = new Vector3[] {
-                //new Vector3(-0.005f, 0f, 0f),
-                //new Vector3(0.0010f, 0f, 0f),
-                //new Vector3(0.0010f, 0f, 0.001f),
-                //new Vector3(0.0020f, 0f, 0.001f)
+
                 Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero
             };
          
@@ -368,21 +365,15 @@ namespace BezierMaster
 
         public void AddCurve(Vector3 touchPosition)
         {
-            //Debug.Log("add curve" + touchPosition);
 
-            //Vector3 point = points[points.Length - 1];
             Vector3 point = touchPosition;
 
             Array.Resize(ref points, points.Length + 3);
 
-            //point.x = point.x + 0.5f;
             points[points.Length - 3] = point;
 
-            //point = touchPosition;
             points[points.Length - 2] = point;
-           // point.x = touchPosition.x + 0.5f;
 
-            //  point.z = touchPosition.z + 0.5f;
             points[points.Length - 1] = point;
 
             Array.Resize(ref modes, modes.Length + 1);

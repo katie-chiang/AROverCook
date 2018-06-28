@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/Users/Felicia/Desktop/AROverCook/testing.apk
+/Users/Felicia/Desktop/testing.apk
 SceneListBegin?
 Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
 SceneListEnd?
@@ -26,6 +26,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 4db4eddbab184d463c1433e1bb2af81f Assembly-CSharp.dll:TouchScript.Examples.UI.SetColor
 3014996d9c14dfce2d942e3a63333354 Assembly-CSharp.dll:.GameManager
 08712033bfb8d4fd2842041f9a20ded7 Assembly-CSharp.dll:TouchScript.Examples.RawInput.Spawner
+994ebd4dcb846d9de8f8c8c37a25a078 Assembly-CSharp.dll:.iceCreamScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Core.LayerManagerInstance
 02f43a4f72590a32c46e9c76cd877fe1 Assembly-CSharp.dll:GoogleARCore.Examples.AugmentedImage.AugmentedImageExampleController
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -135,7 +136,6 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 d01076a6a1818355740b0f2f03649d29 Assembly-CSharp.dll:TouchScript.Examples.Photos.Container
 6172ce0f777c231d1bbfc5b528028128 Assembly-CSharp.dll:GoogleARCore.Examples.Overcooked.ARController
-104c7cc3d9d99f42dcae7bc2a99f55b2 Assembly-CSharp.dll:BezierMaster.BezierMaster
 daa565a4bc00993781a7c9f74a405633 Assembly-CSharp.dll:TouchScript.Gestures.FlickGesture
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Core.TouchManagerInstance
 8dfe490b536785402d2d7078d2dfaf09 Assembly-CSharp.dll:.TacoScript
@@ -173,6 +173,7 @@ dc976b7633a1754b6e2afa3b5e9bf1ee Assembly-CSharp.dll:BezierMaster.BezierSpline
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Behaviors.Cursors.PointerCursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FoodCutting
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Examples.Portal.Vortex
+eaded8f45cbd273dc84f4bc4c99b1d01 Assembly-CSharp.dll:BezierMaster.BezierMaster
 c1fa312bc75f65840a2d531ca0166207 Assembly-CSharp.dll:TouchScript.Examples.Tap.Spawn
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -236,8 +237,6 @@ b99c43181e1b9a8d844ed98e0c6bd0e1 Assembly-CSharp.dll:.RotateItem
 60eed870167e94563437af95bcc883f9 Assembly-CSharp.dll:TouchScript.Examples.Portal.Rotator
 4f52fb13c8876d1fc6a0a4110faf10fc Assembly-CSharp.dll:TouchScript.Gestures.TransformGestures.ScreenTransformGesture
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Core.GestureManagerInstance
-22d0936cb538dc6053295cc40731687c Assembly-CSharp.dll:.Line
-bbd00e36c1d1674aefa2d546afdca5d5 Assembly-CSharp.dll:.PlayerSetup
 6ec273a5fcd8b0a1a1b85b7bebb4a14a Assembly-CSharp.dll:TouchScript.Layers.UI.TouchScriptInputModule
 25cb51b79761cf69e146997ca3f33ce1 Assembly-CSharp.dll:TouchScript.Behaviors.Cursors.MouseCursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.Behaviors.UI.OverHelper
@@ -247,4 +246,3 @@ bbd00e36c1d1674aefa2d546afdca5d5 Assembly-CSharp.dll:.PlayerSetup
 354799ab7253e8d83914c27d4dc65f56 Assembly-CSharp.dll:TouchScript.Examples.Portal.Spawner
 ffcb82fccd9242220f3d88cf27f8bfe3 Assembly-CSharp.dll:TouchScript.Gestures.TransformGestures.PinnedTransformGesture
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TouchScript.LayerManager
-994ebd4dcb846d9de8f8c8c37a25a078 Assembly-CSharp.dll:.iceCreamScript

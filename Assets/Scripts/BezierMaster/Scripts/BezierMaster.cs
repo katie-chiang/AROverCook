@@ -29,7 +29,6 @@ namespace BezierMaster
     public class BezierMaster : MonoBehaviour
     {
         public BezierSpline spline;
-        public BezierSpline spline2;
 
         public bool showCurveEditor;
         public bool showObjectsOptions;
@@ -97,7 +96,7 @@ namespace BezierMaster
         //   -----    mesh creating variables   -----
         //
         [SerializeField]
-        private int lenghtSegmentsCount = 100;
+        private int lenghtSegmentsCount = 299;
         public int LenghtSegmentsCount
         {
             get
@@ -127,7 +126,7 @@ namespace BezierMaster
         }
 
         [SerializeField]
-        public float radius1 = 3;
+        public float radius1 = 0.04f;
         [SerializeField]
         public float radius2 = 1;
 
@@ -155,15 +154,16 @@ namespace BezierMaster
         Vector3 touchPoint = Vector3.zero;
         private bool firstTime = true;
         public bool stop = false;
+        public float coneDistance = 3;
+        public bool hasDistance = false;
 
         void Update()
-        {
+        {   
 
-            //Debug.Log("bool: " + stop);
-
-            //if(stop){
-            //    return;
-            //}
+            //set stop when user presses something to stop drawing
+            if(stop){
+                return;
+            }
 
             if (Input.touchCount < 1)
                 return;
@@ -175,74 +175,46 @@ namespace BezierMaster
 
             Touch touch = Input.GetTouch(0);
 
-
             Ray raycast = Camera.main.ScreenPointToRay(touch.position);
 
-            //mousecount++;
-            //if(mousecount % 10 != 0){
-            //    return;
-            //}
+            //set the distance by checking the distance of the cone
+            if (!hasDistance)
+            {   
+                RaycastHit raycastHit;
+
+                if(Physics.Raycast(raycast, out raycastHit)){
+
+                    if(raycastHit.transform.tag == "icecream"){
+                        coneDistance = raycastHit.distance;
+                        hasDistance = true;
+                    }
+                }
+            }
+
+            //Debug.Log("distance: " + coneDistance);
 
             prevPosition = touchPoint;
-            touchPoint = raycast.GetPoint(3);
+            touchPoint = raycast.GetPoint(coneDistance);
 
-            //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
-            //{
-            //add a condition to only add point if move over a certain distance
             if (Vector3.Distance(prevPosition, touchPoint) > 0.05f)
             {
 
-                //RaycastHit raycastHit;
-                //if (Physics.Raycast(raycast, out raycastHit)){
-                if (spline2 == null)
-                    spline2 = spline;
                 if (firstTime == true)
-                {
-                    spline2.Reset(touchPoint);
-                    //spline2.Reset(raycastHit.point);
-                    //var meshCreator = new CreateCylinder(spline);
+                {   
+                    usingOfSpline = Using.Mesh;
+                    meshType = MeshType.Cylinder;
+                    CreateCylinderMesh();
                     firstTime = false;
                 }
 
-                //commented this out
-                //EditorGUI.BeginChangeCheck();
-
-                // Debug.Log("raycast");
-
-                //comment
-                //Undo.RecordObject(spline2, "Add Curve");
-
-                //Debug.Log("ray" + raycastHit.point);
-
-                //spline2.AddCurve(raycastHit.point);
-                spline2.AddCurve(touchPoint);
-                CreateCylinderMesh();
+                spline.AddCurve(touchPoint);
                 UpdateMesh();
 
-                //commented this out
-                //spline2.AddCurve(raycastHit.point);
-
-                //comment
-                //EditorUtility.SetDirty(spline2);
-
-                //EditorGUI.EndChangeCheck();
-
-                //commeneted this out
-                //if (EditorGUI.EndChangeCheck())
-                //{
-                //    Undo.RecordObject(spline2, "Toggle Loop");
-                //    EditorUtility.SetDirty(spline2);
-                //    //spline2.Loop = loop;
-                //}
-
-                //}else{
-                //    stop = true;
-                //}
             }
 
-            //}    
+
         }
+
 
 
         public void Reset()
@@ -532,25 +504,7 @@ namespace BezierMaster
         private void CreateCylinderMesh()
         {
             //Clear(true);
-            meshCreator = new CreateCylinder(spline2);
-            //meshType = MeshType.Cylinder;
-            //usingOfSpline = Using.Mesh;
-            //radius1 = 0.1f;
-
-            //LenghtSegmentsCount = 200;
-
-            //WidthSegmentsCount = 8;
-
-            //capStart = true;
-            //capEnd = true;
-
-            //textureOrientation = false;
-
-            //meshCreator.LenghtSegmentsCount = LenghtSegmentsCount;
-            //meshCreator.WidthSegmentsCount = WidthSegmentsCount;
-            //meshCreator.radius1 = radius1;
-            //meshCreator.textureOrientation = textureOrientation;
-
+            meshCreator = new CreateCylinder(spline);
 
         }
     }

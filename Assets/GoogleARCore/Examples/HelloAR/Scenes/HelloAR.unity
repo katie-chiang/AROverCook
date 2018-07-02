@@ -264,19 +264,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26074b15f9c13404d858bfedb8b8c00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstPersonCamera: {fileID: 896679035}
+  FirstPersonCamera: {fileID: 0}
   DetectedPlanePrefab: {fileID: 1654175882956584, guid: 6a35c744e5010405c847fad90282d2be,
     type: 2}
   AndyAndroidPrefab: {fileID: 1485005967310022, guid: 79c69d954790e4719816a80a6422365d,
     type: 2}
   curvePrefab: {fileID: 1485005967310022, guid: 79c69d954790e4719816a80a6422365d,
     type: 2}
-  SearchingForPlaneUI: {fileID: 1133631540}
---- !u!20 &896679035 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20155940112608238, guid: c10877f7cd5764de18d46d7b777d1faa,
-    type: 2}
-  m_PrefabInternal: {fileID: 97747990}
+  SearchingForPlaneUI: {fileID: 0}
 --- !u!1 &1133631540
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,9 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d9bad035be947d181be0f3302079b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPrefabs:
-  - {fileID: 1352753150125642, guid: f9ddf6138d896431588306718b8f91d8, type: 2}
-  - {fileID: 1242764675274418, guid: f0991e9069fad4682996a3c8a16b68c1, type: 2}
+  menuPrefabs: []
 --- !u!4 &1247104909
 Transform:
   m_ObjectHideFlags: 0

@@ -43,6 +43,7 @@ namespace BezierMaster
         public Using usingOfSpline;
         public MeshType meshType;
 
+
         private int selectedIndex = -1;
 
         //
@@ -149,83 +150,86 @@ namespace BezierMaster
         public int trianglesCount = 0;
         private int countTouch = 0;
 
-        int mousecount = 0;
         Vector3 prevPosition = Vector3.zero;
         Vector3 touchPoint = Vector3.zero;
         private bool firstTime = true;
         public bool stop = false;
         public float coneDistance = 3;
-        public bool hasDistance = false;
+        public bool touchedIcecream = false;
+        public Transform icecreamTransform;
 
         void Update()
         {
 
-            //set stop when user presses something to stop drawing
+            //set stop when user stops drawing
             if(stop){
-                //after user turns off drawing, should activate move script to move object
                 return;
             }
 
-            if (Input.touchCount < 1)
+            if (Input.touchCount < 1){
                 return;
+            }
+
+            Touch touch = Input.GetTouch(0);
+
+            //if the user released, then the icecream making is done, so activate move script to move the icecream
+            if (touchedIcecream && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
+            {
+                stop = true;
+                Debug.Log("entered stop");
+                //set the movescript on icecream
+                icecreamTransform.gameObject.GetComponent<GoogleARCore.Examples.HelloAR.MoveScript>().enabled = true;
+
+            }
 
             countTouch += 1;
             if (countTouch % 3 != 0)
                 return;
-
-
-            Touch touch = Input.GetTouch(0);
-
+            
             Ray raycast = Camera.main.ScreenPointToRay(touch.position);
 
             //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-
             //set the distance by checking the distance of the cone
-            if (!hasDistance)
-            {   
+            if (!touchedIcecream)
+            {
                 RaycastHit raycastHit;
 
-                if(Physics.Raycast(raycast, out raycastHit)){
+                if (Physics.Raycast(raycast, out raycastHit))
+                {
 
-                    if(raycastHit.transform.tag == "icecream"){
+                    if (raycastHit.transform.tag == "icecream")
+                    {
+                        icecreamTransform = raycastHit.transform;
                         coneDistance = raycastHit.distance;
-                        hasDistance = true;
+                        touchedIcecream = true;
                     }
                 }
             }
-
-            //Debug.Log("distance: " + coneDistance);
-
-            //Debug.Log("before: (" + raycast.GetPoint(coneDistance).x + "," + raycast.GetPoint(coneDistance).y + "," + raycast.GetPoint(coneDistance).z + ")");
-
-
-            prevPosition = touchPoint;
-
-            //inverse transform point transforms the coordinates to local instead of global
-            touchPoint = transform.InverseTransformPoint(raycast.GetPoint(coneDistance));
-            //touchPoint = raycast.GetPoint(coneDistance);
-
-           // Debug.Log("(" + touchPoint.x + "," + touchPoint.y + "," + touchPoint.z + ")");
-
-
-            if (Vector3.Distance(prevPosition, touchPoint) > 0.05f)
+            else
             {
 
-                if (firstTime == true)
-                {   
-                    usingOfSpline = Using.Mesh;
-                    meshType = MeshType.Cylinder;
-                    CreateCylinderMesh();
-                    firstTime = false;
+                prevPosition = touchPoint;
+
+                //inverse transform point transforms the coordinates to local instead of global
+                touchPoint = transform.InverseTransformPoint(raycast.GetPoint(coneDistance));
+
+                if (Vector3.Distance(prevPosition, touchPoint) > 0.05f)
+                {
+
+                    if (firstTime == true)
+                    {
+                        usingOfSpline = Using.Mesh;
+                        meshType = MeshType.Cylinder;
+                        CreateCylinderMesh();
+                        firstTime = false;
+                    }
+
+                    spline.AddCurve(touchPoint);
+                    UpdateMesh();
+
                 }
-
-                spline.AddCurve(touchPoint);
-                UpdateMesh();
-
             }
-
-
         }
 
 

@@ -190,7 +190,8 @@ MonoBehaviour:
   trianglesCount: 2990
   stop: 0
   coneDistance: 3
-  hasDistance: 0
+  touchedIcecream: 0
+  icecreamTransform: {fileID: 0}
 --- !u!114 &114489452753990542
 MonoBehaviour:
   m_ObjectHideFlags: 1

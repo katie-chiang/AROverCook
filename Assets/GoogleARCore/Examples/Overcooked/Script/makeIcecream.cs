@@ -31,6 +31,14 @@ public class makeIcecream : MonoBehaviour {
         }
 
         Touch touch = Input.GetTouch(0);
+
+        //changed for debugging with mouse
+        //if(!Input.GetMouseButtonDown(0)){
+        //    return;
+        //}
+        //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
         Ray raycast = Camera.main.ScreenPointToRay(touch.position);
         RaycastHit raycastHit;
 
@@ -40,7 +48,7 @@ public class makeIcecream : MonoBehaviour {
             if (raycastHit.transform == transform)
             {
                 distanceToCone = raycastHit.distance;
-                GameObject curveObject = Instantiate(curvePrefab, raycastHit.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                GameObject curveObject = Instantiate(curvePrefab, raycastHit.transform.position, Quaternion.identity);
                 curveObject.transform.parent = transform;
                 firstTime = false;
             }

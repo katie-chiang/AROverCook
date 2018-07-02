@@ -158,10 +158,11 @@ namespace BezierMaster
         public bool hasDistance = false;
 
         void Update()
-        {   
+        {
 
             //set stop when user presses something to stop drawing
             if(stop){
+                //after user turns off drawing, should activate move script to move object
                 return;
             }
 
@@ -176,6 +177,9 @@ namespace BezierMaster
             Touch touch = Input.GetTouch(0);
 
             Ray raycast = Camera.main.ScreenPointToRay(touch.position);
+
+            //Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+
 
             //set the distance by checking the distance of the cone
             if (!hasDistance)
@@ -193,8 +197,17 @@ namespace BezierMaster
 
             //Debug.Log("distance: " + coneDistance);
 
+            //Debug.Log("before: (" + raycast.GetPoint(coneDistance).x + "," + raycast.GetPoint(coneDistance).y + "," + raycast.GetPoint(coneDistance).z + ")");
+
+
             prevPosition = touchPoint;
-            touchPoint = raycast.GetPoint(coneDistance);
+
+            //inverse transform point transforms the coordinates to local instead of global
+            touchPoint = transform.InverseTransformPoint(raycast.GetPoint(coneDistance));
+            //touchPoint = raycast.GetPoint(coneDistance);
+
+           // Debug.Log("(" + touchPoint.x + "," + touchPoint.y + "," + touchPoint.z + ")");
+
 
             if (Vector3.Distance(prevPosition, touchPoint) > 0.05f)
             {
